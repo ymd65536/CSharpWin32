@@ -54,7 +54,7 @@ bool EnumChildProcIES(IntPtr hWnd, IntPtr lParam)
   else
   {
     IHTMLDocument3 ReHtml = (IHTMLDocument3)obj;
-    Console.WriteLine(ReHtml.getElementsByName("q").length);
+    // Console.WriteLine(ReHtml.getElementsByName("q").length);
   }
 
 
