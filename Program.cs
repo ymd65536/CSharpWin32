@@ -42,13 +42,17 @@ bool EnumChildProcIES(IntPtr hWnd, IntPtr lParam)
 
   int ChildTitle = WinNative.GetWindowText(ChildHwnd, TitleName, 500);
 
-  //Console.WriteLine("{0} 0x{1:X8} - {2} {3} {4}", new string('+', ((int)lParam)), hWnd, sb.ToString(), className, TitleName);
-  if(className.ToString() == "Internet Explorer_Server"){
+  Console.WriteLine("{0} 0x{1:X8} - {2} {3} {4}", new string('+', ((int)lParam)), hWnd, sb.ToString(), className, TitleName);
+  if (className.ToString() == "Internet Explorer_Server")
+  {
     MainHwnd = hWnd;
   }
   object obj = WinNative.GetHTMLDocumentFromIES(MainHwnd);
-  if(obj is null){
-  }else{
+  if (obj is null)
+  {
+  }
+  else
+  {
     IHTMLDocument3 ReHtml = (IHTMLDocument3)obj;
     Console.WriteLine(ReHtml.getElementsByName("q").length);
   }
